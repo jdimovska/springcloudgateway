@@ -1,0 +1,14 @@
+server:
+  port: 8080
+  
+spring:
+  cloud:
+    discovery:
+      enabled: false
+    gateway:
+      routes:
+        # Route for Private Web App (only accessible through the gateway)
+        - id: private-webapp
+          uri: http://localhost:8081  # The URI of the private web app
+          predicates:
+            - Path=/private/**  # Any request that starts with /private will be routed here
