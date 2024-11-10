@@ -9,6 +9,6 @@ spring:
       routes:
         # Route for Private Web App (only accessible through the gateway)
         - id: private-webapp
-          uri: 10.0.1.4
+          uri: https://private-spring-web-app.azurewebsites.net
           predicates:
             - Path=/private/**  # Any request that starts with /private will be routed here
